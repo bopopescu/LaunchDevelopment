@@ -3,7 +3,7 @@
 import unittest
 import sys
 import Tkinter
-from ttk import setup_master, Scale
+from ttk import setup_main, Scale
 from test_ttk.support import (tcl_version, requires_tcl, get_tk_patchlevel,
                               pixels_conv, tcl_obj_eq)
 import test.test_support
@@ -32,7 +32,7 @@ class AbstractWidgetTest(object):
     wantobjects = True
 
     def setUp(self):
-        self.root = setup_master()
+        self.root = setup_main()
         self.scaling = float(self.root.call('tk', 'scaling'))
         if not self.root.wantobjects():
             self.wantobjects = False
